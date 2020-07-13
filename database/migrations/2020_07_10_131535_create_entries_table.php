@@ -17,11 +17,14 @@ class CreateEntriesTable extends Migration
             $table->id();
 
             $table->string('title');
-            $table->text('content'); // text permite guardar muchas mas info 
+            $table->text('content'); // text permite guardar muchas mas info
 
-            // autor: 
+            // autor:
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
+
+            // slug
+            $table->string('slug');
 
             $table->timestamps();
         });

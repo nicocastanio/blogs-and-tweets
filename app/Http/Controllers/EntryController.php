@@ -50,7 +50,7 @@ class EntryController extends Controller
     {
     //    dd($request->all());
         $validatedData = $request->validate([
-            'title' => 'required|min:7|max:255|unique:entries,id,'.$entry->id,  // agregamos id para que no verifique contra sí mismo
+            'title' => 'required|min:7|max:255|unique:entries,id,'.$entry->id,  // agregamos id para que no verifique contra sí
             'content' => 'required|min:25|max:3000'
         ]);
 
