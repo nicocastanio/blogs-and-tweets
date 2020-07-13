@@ -23,12 +23,20 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+// formulario para crear una entrada
 Route::get('/entries/create', 'EntryController@create');
+// crea la entrada (graba)
 Route::post('/entries', 'EntryController@store');
 
-Route::get('/entries/{entryBySlug}', 'GuestController@show');  // ver una entrada
+// ver una entrada
+Route::get('/entries/{entryBySlug}', 'GuestController@show');
 
-Route::get('/entries/{entry}/edit', 'EntryController@edit');  // editar una entrada
+// editar una entrada
+Route::get('/entries/{entry}/edit', 'EntryController@edit');
+    // ->middleware('can:update,entry');
+
+// actualizar una entrada
 Route::put('/entries/{entry}', 'EntryController@update');
+    // ->middleware('can:update,entry');
 
 Route::get('/users/{user}', 'UserController@show');
