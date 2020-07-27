@@ -27,7 +27,7 @@ class Entry extends Model
 
     public function getUrl()
     {
-        return url("entries/$this->slug-$this->id");
+        return url("entries/$this->slug-$this->id");  // con comillas dobles no necesitamos '.' para concatenar
         // return url('entries/'.$this->slug.'-'.$this->id);
     }
 }

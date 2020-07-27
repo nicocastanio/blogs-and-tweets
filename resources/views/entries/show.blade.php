@@ -24,6 +24,11 @@
                     {{-- @endif --}}
 
                 </div>
+
+                <div class="card-footer">
+                    Author:
+                    <a href="{{ url('@'.$entry->user->username) }}">{{ $entry->user->username }}</a>
+                </div>
             </div>
         </div>
     </div>
